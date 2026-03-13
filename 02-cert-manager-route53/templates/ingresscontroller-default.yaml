@@ -5,7 +5,8 @@ metadata:
   name: default
   namespace: openshift-ingress-operator
   annotations:
-    argocd.argoproj.io.io/sync-option: ServerSideApply=true
+    argocd.argoproj.io/sync-options: ServerSideApply=true
+    argocd.argoproj.io/sync-wave: "15"
 spec:
   replicas: 2
   defaultCertificate:
