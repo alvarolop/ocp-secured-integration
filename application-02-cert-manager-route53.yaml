@@ -18,6 +18,8 @@ spec:
       parameters:
         - name: clusterDomain
           value: $CLUSTER_DOMAIN
+        - name: route53.region
+          value: $AWS_DEFAULT_REGION
         # - name: etcdEncryption.enabled
         #   value: "true"
   syncPolicy:
