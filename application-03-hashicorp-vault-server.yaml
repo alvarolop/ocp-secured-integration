@@ -13,7 +13,7 @@ spec:
   project: default
   source:
     repoURL: https://helm.releases.hashicorp.com
-    targetRevision: 0.29.1
+    targetRevision: 0.32.0
     chart: vault
     helm:
       valuesObject:
@@ -22,6 +22,11 @@ spec:
         injector:
           enabled: false
         server:
+          image:
+            repository: "registry.connect.redhat.com/hashicorp/vault"
+            tag: "1.21.2-ubi"
+          readinessProbe:
+            path: "/v1/sys/health?uninitcode=204"
           dev:
             enabled: true
           route:
